@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for tarea in tareas %}
+    <h3>{{ tarea.titulo }}</h3>
+    <p>{{ tarea.descripcion }}</p>
+    <p>Completada: {{ tarea.completada }}</p>
+    <a href="{% url 'editar_tarea' tarea.id %}">Editar</a>
+    <a href="{% url 'eliminar_tarea' tarea.id %}">Eliminar</a>
+    {% endfor %}
+    <a href="{% url 'crear_tarea' %}">Crear nueva tarea</a>
+</body>
+</html>
